@@ -1,0 +1,90 @@
+# Customize your aliases of each command:
+commands:
+  prefix: "btp"
+  add: "add"
+  help: "help"
+  list: "list"
+  remove: "remove"
+  set: "set"
+  teleport: "tp"
+
+
+permissions:
+  add: "btp.add"
+  help: "none"
+  list: "btp.list"
+  remove: "btp.remove"
+  set: "btp.set"
+  teleport: "btp.tp"
+
+
+# Variables:
+#   %x%, %y%, %z%, %yaw%, %pitch%
+forms:
+  xyz: "&rPosition: %x% / %y%/ %z%"
+  facing: "&rFacing: (%yaw% / %pitch%)"
+  world: "&rWorld: %world-name%"
+
+
+# Variables:
+#   %anchor-name%, %cd-left%, %command%, %name%, %permission%, %world-name%
+#   %add%, %help%, %list%, %remove%, %set%, %teleport%
+
+# Colors:
+#   BLACK = &0, DARK_BLUE = &1, DARK_GREEN = &2, DARK_AQUA = &3
+#   DARK_RED = &4, DARK_PURPLE = &5, GOLD = &6, GRAY = &7
+#   DARK_GRAY = &8, BLUE = &9, GREEN = &a, AQUA = &b
+#   RED = &c, LIGHT_PURPLE = &d, YELLOW = &e, WHITE = &f
+
+# Formats:
+#   OBFUSCATED = &k, BOLD = &l, STRIKETHROUGH = &m,
+#   UNDERLINE = &n, ITALIC = &o, RESET = &r
+
+messages:
+  prefix: "&7[&cBetterTP&7]&r"
+  click-to-teleport: "&7[Click To Teleport]"
+  caution-for-console: "&cYou can't execute this command in console!"
+  anchor:
+    added: "&aAnchor added! name: %anchor-name%"
+    edited: "&aAnchor edited! name: %anchor-name%"
+    existed: "&cAnchor existed! name: %anchor-name%"
+    information: "&e--------- &rInformation &e---------&r"
+    list-title: "&e--------- &rAnchors &e---------&r"
+    no-found: "&cThere is no anchor on this server!"
+    not-found: "&cAnchor not found! name: %anchor-name%"
+    removed: "&aAnchor removed! name: %anchor-name%"
+  command:
+    cool-down: "&cYou can use BetterTP command after %cd-left%s!"
+    invalid: "&cInvalid command! command: %command%"
+    title: "&e--------- &rHelp: BetterTP &e---------------------------&r"
+    description: "&7Below is a list of all BetterTP commands:&r"
+    add:
+      usage: "&6/btp %add% <name>"
+      description: "&rAdd an anchor at player's location"
+    help:
+      usage: "&6/btp %help%"
+      description: "&rShow this list"
+    list:
+      usage: "&6/btp %list%"
+      description: "&rList all anchors"
+    remove:
+      usage: "&6/btp %remove% <name>"
+      description: "&rRemove an assigned anchor"
+    set:
+      usage: "&6/btp %set% <name>"
+      description: "&rSet location of an assigned anchor to player's location"
+    teleport:
+      usage: "&6/btp %teleport% <name>"
+      description: "&rTeleport to an assigned anchor"
+  player:
+    no-permission: "&cYou don't have permission to do this! permission: %permission%"
+    teleport: "&aTeleport to %world-name%"
+    teleport-cross-world: "&cYou can't teleport to another world! name: %world-name%"
+  world:
+    not-found: "&cWorld not found! name: %world-name%"
+
+
+settings:
+  command-cd: 1000
+  cross-world: false
+  only-player: true

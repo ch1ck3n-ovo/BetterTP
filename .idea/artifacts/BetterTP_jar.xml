@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BetterTP:jar">
+    <output-path>$PROJECT_DIR$/../../1.20.4 Survival 481/plugins</output-path>
+    <root id="archive" name="BetterTP.jar">
+      <element id="module-output" name="BetterTP" />
+    </root>
+  </artifact>
+</component>

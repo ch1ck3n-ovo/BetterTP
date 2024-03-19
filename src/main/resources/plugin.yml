@@ -1,0 +1,7 @@
+name: BetterTP
+version: '1.0'
+main: tw.ch1ck3n.bettertp.BetterTP
+api-version: '1.20'
+commands:
+  btp:
+    usage: "Main command of BetterTP"
