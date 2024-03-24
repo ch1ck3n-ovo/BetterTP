@@ -48,11 +48,16 @@ public class BTPTPCommand {
                         player.teleport(anchor);
                         return ChatUtils.sendMessage(sender, messages.playerTeleport.replaceAll("%anchor-name%", name));
                     } else {
-                        if (sender.hasPermission(Permissions.TP_PRIVATE_ANCHOR)) {
+                        if (ConfigUtils.getPublic(config, name).equals("Private")) {
+                            if (sender.hasPermission(Permissions.TP_PRIVATE_ANCHOR)) {
+                                player.teleport(anchor);
+                                return ChatUtils.sendMessage(sender, messages.playerTeleport.replaceAll("%anchor-name%", name));
+                            } else {
+                                return ChatUtils.sendNoPermissionMessage(sender, Permissions.TP_PRIVATE_ANCHOR.getName());
+                            }
+                        } else if (ConfigUtils.getPublic(config, name).equals("Public")) {
                             player.teleport(anchor);
                             return ChatUtils.sendMessage(sender, messages.playerTeleport.replaceAll("%anchor-name%", name));
-                        } else {
-                            return ChatUtils.sendNoPermissionMessage(sender, Permissions.TP_PRIVATE_ANCHOR.getName());
                         }
                     }
                 } else if (!settings.teleportCrossWorld) {
@@ -65,11 +70,16 @@ public class BTPTPCommand {
                     player.teleport(anchor);
                     return ChatUtils.sendMessage(sender, messages.playerTeleport.replaceAll("%anchor-name%", name));
                 } else {
-                    if (sender.hasPermission(Permissions.TP_PRIVATE_ANCHOR)) {
+                    if (ConfigUtils.getPublic(config, name).equals("Private")) {
+                        if (sender.hasPermission(Permissions.TP_PRIVATE_ANCHOR)) {
+                            player.teleport(anchor);
+                            return ChatUtils.sendMessage(sender, messages.playerTeleport.replaceAll("%anchor-name%", name));
+                        } else {
+                            return ChatUtils.sendNoPermissionMessage(sender, Permissions.TP_PRIVATE_ANCHOR.getName());
+                        }
+                    } else if (ConfigUtils.getPublic(config, name).equals("Public")) {
                         player.teleport(anchor);
                         return ChatUtils.sendMessage(sender, messages.playerTeleport.replaceAll("%anchor-name%", name));
-                    } else {
-                        return ChatUtils.sendNoPermissionMessage(sender, Permissions.TP_PRIVATE_ANCHOR.getName());
                     }
                 }
             }
