@@ -1,33 +1,5 @@
-# Customize your aliases of each command:
-commands:
-  prefix: "btp"
-  add: "add"
-  help: "help"
-  list: "list"
-  remove: "remove"
-  set: "set"
-  teleport: "tp"
-
-
-permissions:
-  add: "btp.add"
-  help: "none"
-  list: "btp.list"
-  remove: "btp.remove"
-  set: "btp.set"
-  teleport: "btp.tp"
-
-
 # Variables:
-#   %x%, %y%, %z%, %yaw%, %pitch%
-forms:
-  xyz: "&rPosition: %x% / %y%/ %z%"
-  facing: "&rFacing: (%yaw% / %pitch%)"
-  world: "&rWorld: %world-name%"
-
-
-# Variables:
-#   %anchor-name%, %cd-left%, %command%, %name%, %permission%, %world-name%
+#   %anchor-name%, %cool-down-left%, %command%, %name%, %permission%, %world-name%
 #   %add%, %help%, %list%, %remove%, %set%, %teleport%
 
 # Colors:
@@ -39,52 +11,57 @@ forms:
 # Formats:
 #   OBFUSCATED = &k, BOLD = &l, STRIKETHROUGH = &m,
 #   UNDERLINE = &n, ITALIC = &o, RESET = &r
+message:
+  cannot-execute-in-console: "&cYou can't execute this command in console!"
+  cannot-teleport-cross-world: "&cYou can't teleport to another world! name: %world-name%"
+  command-in-cool-down: "&cYou can use BetterTP command after %cool-down-left%s!"
+  invalid-argument: "&cInvalid argument! command: %argument%"
+  invalid-command: "&cInvalid command! command: %command%"
+  no-command-permission: "&cYou don't have permission to do this! permission: %permission%"
+  anchor-added: "&aAnchor added! name: %anchor-name%"
+  anchor-edited: "&aAnchor edited! name: %anchor-name%"
+  anchor-existed: "&cAnchor existed! name: %anchor-name%"
+  anchor-list-title: "&e--------- &rAnchors &e---------&r"
+  anchor-item-form: "+ %anchor-name%"
+  anchor-not-found: "&cAnchor not found! name: %anchor-name%"
+  anchor-removed: "&aAnchor removed! name: %anchor-name%"
+  no-anchor-found: "&cThere is no anchor on this server!"
+  player-teleport: "&aTeleport to %world-name%"
+  world-not-found: "&cWorld not found! name: %world-name%"
+  help:
+    - "&e--------- &rHelp: BetterTP &e---------------------------&r"
+    - "&7Below is a list of all BetterTP commands:&r"
+    - "&6/btp add <name>: &rAdd an anchor at player's location"
+    - "&6/btp help: &rShow this list"
+    - "&6/btp list: &rList all anchors"
+    - "&6/btp remove <name>: &rRemove an assigned anchor"
+    - "&6/btp set <name>: &rSet location of an assigned anchor to player's location"
+    - "&6/btp tp <name>: &rTeleport to an assigned anchor"
+  # Variables:
+  #   %position-x%, %position-y%, %position-z%, %rotation-yaw%, %rotation-pitch%, %world-name%, %author%, %public%
+  information:
+    - "&e--------- &rInformation: %world-name% &e---------&r"
+    - "&rPosition: %position-x% / %position-y% / %position-z%"
+    - "&rFacing: (%rotation-yaw% / %rotation-pitch%)"
+    - "&rWorld: %world-name%"
+    - "&rAccess: %access%"
+    - "&rCreated by %author%"
+    - ""
+    - "&7[Click To Teleport]"
 
-messages:
-  prefix: "&7[&cBetterTP&7]&r"
-  click-to-teleport: "&7[Click To Teleport]"
-  caution-for-console: "&cYou can't execute this command in console!"
-  anchor:
-    added: "&aAnchor added! name: %anchor-name%"
-    edited: "&aAnchor edited! name: %anchor-name%"
-    existed: "&cAnchor existed! name: %anchor-name%"
-    information: "&e--------- &rInformation &e---------&r"
-    list-title: "&e--------- &rAnchors &e---------&r"
-    no-found: "&cThere is no anchor on this server!"
-    not-found: "&cAnchor not found! name: %anchor-name%"
-    removed: "&aAnchor removed! name: %anchor-name%"
+setting:
   command:
-    cool-down: "&cYou can use BetterTP command after %cd-left%s!"
-    invalid: "&cInvalid command! command: %command%"
-    title: "&e--------- &rHelp: BetterTP &e---------------------------&r"
-    description: "&7Below is a list of all BetterTP commands:&r"
-    add:
-      usage: "&6/btp %add% <name>"
-      description: "&rAdd an anchor at player's location"
-    help:
-      usage: "&6/btp %help%"
-      description: "&rShow this list"
-    list:
-      usage: "&6/btp %list%"
-      description: "&rList all anchors"
-    remove:
-      usage: "&6/btp %remove% <name>"
-      description: "&rRemove an assigned anchor"
-    set:
-      usage: "&6/btp %set% <name>"
-      description: "&rSet location of an assigned anchor to player's location"
-    teleport:
-      usage: "&6/btp %teleport% <name>"
-      description: "&rTeleport to an assigned anchor"
-  player:
-    no-permission: "&cYou don't have permission to do this! permission: %permission%"
-    teleport: "&aTeleport to %world-name%"
-    teleport-cross-world: "&cYou can't teleport to another world! name: %world-name%"
-  world:
-    not-found: "&cWorld not found! name: %world-name%"
+    # To prevent players from spamming commands, unit = millisecond
+    min-command-cool-down: 1000
+    # To prevent commands from being executed from console
+    only-execute-by-players: true
+  teleport:
+    # To prevent player from teleporting cross world
+    teleport-cross-world: false
+    # To prevent player from teleporting to private anchor
+    teleport-private-anchor: false
 
 
-settings:
-  command-cd: 1000
-  cross-world: false
-  only-player: true
+
+
+

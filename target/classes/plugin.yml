@@ -1,7 +1,30 @@
 name: BetterTP
-version: '1.0'
+version: '2.0'
 main: tw.ch1ck3n.bettertp.BetterTP
 api-version: '1.20'
 commands:
   btp:
-    usage: "Main command of BetterTP"
+    description: "Main command of BetterTP"
+permissions:
+  btp.add:
+    default: true
+  btp.help:
+    default: true
+  btp.list:
+    default: true
+  btp.remove:
+    default: true
+  btp.force-remove:
+    default: op
+  btp.set:
+    default: true
+  btp.force-set:
+    default: op
+  btp.tp:
+    default: true
+  btp.ignore-cd:
+    default: op
+  btp.tp-cross-world:
+    default: true
+  btp.tp-private-anchor:
+    default: op
