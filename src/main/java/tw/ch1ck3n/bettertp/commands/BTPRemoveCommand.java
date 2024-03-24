@@ -22,7 +22,7 @@ public class BTPRemoveCommand {
         World world = ((Player) sender).getWorld();
         String name, worldName;
         if (args[1].contains(".")) {
-            name = args[1].split("\\.")[0];
+            name = args[1].split("\\.")[1];
             worldName = args[1].split("\\.")[0];
         } else {
             name = args[1];
