@@ -25,7 +25,7 @@ public class BTPTPCommand {
         Player player = ((Player) sender).getPlayer();
         World world = ((Player) sender).getWorld();
         String name, worldName;
-        Bukkit.getConsoleSender().sendMessage(args[1]);
+//        Bukkit.getConsoleSender().sendMessage(args[1]);
 
         if (args[1].contains(".")) {
             name = args[1].split("\\.")[1];
